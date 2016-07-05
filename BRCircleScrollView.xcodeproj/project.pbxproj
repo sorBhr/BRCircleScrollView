@@ -14,6 +14,8 @@
 		31EE2B341D2A5F0500273E36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31EE2B321D2A5F0500273E36 /* LaunchScreen.storyboard */; };
 		31EE2B3F1D2A5F0500273E36 /* BRCircleScrollViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EE2B3E1D2A5F0500273E36 /* BRCircleScrollViewTests.swift */; };
 		31EE2B4A1D2A5F0500273E36 /* BRCircleScrollViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EE2B491D2A5F0500273E36 /* BRCircleScrollViewUITests.swift */; };
+		31EE2B581D2A5FBA00273E36 /* BRScrollViewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EE2B571D2A5FBA00273E36 /* BRScrollViewPage.swift */; };
+		8A4B1B155081CB26B3B45EE1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4C9D9182EFB719783C69CA /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13B46659373BA04E6427A657 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		31EE2B261D2A5F0500273E36 /* BRCircleScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BRCircleScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31EE2B291D2A5F0500273E36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31EE2B2B1D2A5F0500273E36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +50,9 @@
 		31EE2B451D2A5F0500273E36 /* BRCircleScrollViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BRCircleScrollViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31EE2B491D2A5F0500273E36 /* BRCircleScrollViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRCircleScrollViewUITests.swift; sourceTree = "<group>"; };
 		31EE2B4B1D2A5F0500273E36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31EE2B571D2A5FBA00273E36 /* BRScrollViewPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRScrollViewPage.swift; sourceTree = "<group>"; };
+		3766EDBB9C7C4D05A5544775 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		8A4C9D9182EFB719783C69CA /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A4B1B155081CB26B3B45EE1 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +88,8 @@
 				31EE2B3D1D2A5F0500273E36 /* BRCircleScrollViewTests */,
 				31EE2B481D2A5F0500273E36 /* BRCircleScrollViewUITests */,
 				31EE2B271D2A5F0500273E36 /* Products */,
+				4C917AC4CCB438DA175BB035 /* Pods */,
+				E8E6C54E14FDAF1F15F18775 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +106,7 @@
 		31EE2B281D2A5F0500273E36 /* BRCircleScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				31EE2B571D2A5FBA00273E36 /* BRScrollViewPage.swift */,
 				31EE2B291D2A5F0500273E36 /* AppDelegate.swift */,
 				31EE2B2B1D2A5F0500273E36 /* ViewController.swift */,
 				31EE2B2D1D2A5F0500273E36 /* Main.storyboard */,
@@ -125,6 +135,23 @@
 			path = BRCircleScrollViewUITests;
 			sourceTree = "<group>";
 		};
+		4C917AC4CCB438DA175BB035 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3766EDBB9C7C4D05A5544775 /* Pods.debug.xcconfig */,
+				13B46659373BA04E6427A657 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E8E6C54E14FDAF1F15F18775 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A4C9D9182EFB719783C69CA /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +159,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31EE2B4E1D2A5F0500273E36 /* Build configuration list for PBXNativeTarget "BRCircleScrollView" */;
 			buildPhases = (
+				8C53DE1EA2350D52242A0171 /* Check Pods Manifest.lock */,
 				31EE2B221D2A5F0500273E36 /* Sources */,
 				31EE2B231D2A5F0500273E36 /* Frameworks */,
 				31EE2B241D2A5F0500273E36 /* Resources */,
+				217CFFC78D75DD0821339379 /* Embed Pods Frameworks */,
+				49AE9DCF59A42B7667A2D080 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,12 +281,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		217CFFC78D75DD0821339379 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49AE9DCF59A42B7667A2D080 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C53DE1EA2350D52242A0171 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		31EE2B221D2A5F0500273E36 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				31EE2B2C1D2A5F0500273E36 /* ViewController.swift in Sources */,
+				31EE2B581D2A5FBA00273E36 /* BRScrollViewPage.swift in Sources */,
 				31EE2B2A1D2A5F0500273E36 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,6 +476,7 @@
 		};
 		31EE2B4F1D2A5F0500273E36 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3766EDBB9C7C4D05A5544775 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BRCircleScrollView/Info.plist;
@@ -408,6 +488,7 @@
 		};
 		31EE2B501D2A5F0500273E36 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13B46659373BA04E6427A657 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BRCircleScrollView/Info.plist;
@@ -482,6 +563,7 @@
 				31EE2B501D2A5F0500273E36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		31EE2B511D2A5F0500273E36 /* Build configuration list for PBXNativeTarget "BRCircleScrollViewTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +572,7 @@
 				31EE2B531D2A5F0500273E36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		31EE2B541D2A5F0500273E36 /* Build configuration list for PBXNativeTarget "BRCircleScrollViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +581,7 @@
 				31EE2B561D2A5F0500273E36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
