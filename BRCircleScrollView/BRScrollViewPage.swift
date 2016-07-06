@@ -57,6 +57,10 @@ public class BRScrollViewPage: UIView ,UIScrollViewDelegate {
     private lazy var pageView:UIPageControl = {
        return UIPageControl()
     }()
+    typealias block = ()->Void
+    
+    var BlockWith:block?
+    
     
     ///pageView样式
     public var pageStyle:BRScrollViewPageStyle = .center {
@@ -66,19 +70,19 @@ public class BRScrollViewPage: UIView ,UIScrollViewDelegate {
         didSet{
             print("oldValue = \(oldValue) newValue = \(pageStyle)")
             switch pageStyle {
-            case .left: pageView.snp_remakeConstraints(closure: { (make) in
-                make.left.equalTo(scrollView).offset(pageViewOffSet)
-                make.size.equalTo(pageSize)
+            case .left: pageView.snp_remakeConstraints(closure: { [unowned self](make) in
+                make.left.equalTo(self.scrollView).offset(pageViewOffSet)
+                make.size.equalTo(self.pageSize)
                 make.bottom.equalTo(self).offset(-pageViewOffSet)
                 });break
-            case .right: pageView.snp_remakeConstraints(closure: { (make) in
-                make.right.equalTo(scrollView).offset(-pageViewOffSet)
-                make.size.equalTo(pageSize)
+            case .right: pageView.snp_remakeConstraints(closure: { [unowned self](make) in
+                make.right.equalTo(self.scrollView).offset(-pageViewOffSet)
+                make.size.equalTo(self.pageSize)
                 make.bottom.equalTo(self).offset(-pageViewOffSet)
             });  break
-            default: pageView.snp_makeConstraints { (make) in
+            default: pageView.snp_makeConstraints {[unowned self] (make) in
                     make.centerX.equalTo(self)
-                    make.size.equalTo(pageSize)
+                    make.size.equalTo(self.pageSize)
                     make.bottom.equalTo(self).offset(-pageViewOffSet)
                 };break
             }
@@ -196,25 +200,25 @@ public class BRScrollViewPage: UIView ,UIScrollViewDelegate {
         leftImageView.userInteractionEnabled = true
         centerImageView.userInteractionEnabled = true
         rightImageView.userInteractionEnabled = true
-        leftImageView.snp_makeConstraints { (make) in
-            make.left.equalTo(scrollView)
-            make.height.equalTo(scrollView)
+        leftImageView.snp_makeConstraints {[unowned self] (make) in
+            make.left.equalTo(self.scrollView)
+            make.height.equalTo(self.scrollView)
             make.width.equalTo(self.frame.width)
-            make.top.equalTo(scrollView)
+            make.top.equalTo(self.scrollView)
         }
         leftImageView.contentMode = .ScaleAspectFit
-        centerImageView.snp_makeConstraints { (make) in
-            make.left.equalTo(scrollView).offset(self.frame.width)
-            make.height.equalTo(scrollView)
+        centerImageView.snp_makeConstraints {[unowned self] (make) in
+            make.left.equalTo(self.scrollView).offset(self.frame.width)
+            make.height.equalTo(self.scrollView)
             make.width.equalTo(self.frame.width)
-            make.top.equalTo(scrollView)
+            make.top.equalTo(self.scrollView)
         }
         centerImageView.contentMode = .ScaleAspectFit
-        rightImageView.snp_makeConstraints { (make) in
-            make.left.equalTo(scrollView).offset(self.frame.width * 2)
-            make.height.equalTo(scrollView)
+        rightImageView.snp_makeConstraints {[unowned self] (make) in
+            make.left.equalTo(self.scrollView).offset(self.frame.width * 2)
+            make.height.equalTo(self.scrollView)
             make.width.equalTo(self.frame.width)
-            make.top.equalTo(scrollView)
+            make.top.equalTo(self.scrollView)
         }
         rightImageView.contentMode = .ScaleAspectFit
     }
@@ -232,9 +236,9 @@ public class BRScrollViewPage: UIView ,UIScrollViewDelegate {
         pageSize = pageView.sizeForNumberOfPages(array.count)
         pageView.currentPageIndicatorTintColor = currentPageIndicatorTintColor
         pageView.pageIndicatorTintColor = pageIndicatorTintColor
-        pageView.snp_makeConstraints { (make) in
+        pageView.snp_makeConstraints { [unowned self](make) in
             make.centerX.equalTo(self)
-            make.size.equalTo(pageSize)
+            make.size.equalTo(self.pageSize)
             make.bottom.equalTo(self).offset(-pageViewOffSet)
         }
         //MARK: - 关掉pageView的交互性
@@ -292,6 +296,7 @@ public class BRScrollViewPage: UIView ,UIScrollViewDelegate {
      代理回调
      */
       @objc private func clickIndex(){
+        BlockWith?()
         self.delegate?.didSelectAtIndex?(currentImageIndex)
     }
     /**
@@ -303,7 +308,7 @@ public class BRScrollViewPage: UIView ,UIScrollViewDelegate {
 }
 // MARK: - scrollview Delegate
 extension BRScrollViewPage{
-    public func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    public func scrollViewDidEndDecelerating(scrollView: UIScrollView){
         reloadImage()
         scrollView.setContentOffset(CGPoint(x: self.frame.width, y: 0), animated: false)
         pageView.currentPage = currentImageIndex
